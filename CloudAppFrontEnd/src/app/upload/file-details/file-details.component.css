@@ -1,0 +1,16 @@
+a:link{
+  color:green
+}
+
+a:visited{
+    color:blue
+  }
+
+  a:hover{
+    color:red
+  }
+
+  button{
+    background-color: red;
+    margin-right: 1000px;
+  }

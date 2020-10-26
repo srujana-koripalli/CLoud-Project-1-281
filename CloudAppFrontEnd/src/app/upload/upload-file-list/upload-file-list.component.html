@@ -1,0 +1,17 @@
+<!--<button class="button btn-info" *ngIf='showFile' (click)='showFiles(false)'>Hide Files</button>-->
+
+<button class="button btn-info" *ngIf='!showFile' (click)='showFiles(true)'>Display All Files</button>
+
+<div [hidden]="!showFile">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <p class="font-weight-bold"> Click on the below Files to **DOWNLOAD** </p>
+    </div>
+    <div *ngFor="let file of fileUploads | async">
+      <div class="panel panel-default"></div>
+      <div class="panel-body">
+        <file-details [fileUpload]='file'></file-details>
+      </div>
+    </div>
+  </div>
+</div>

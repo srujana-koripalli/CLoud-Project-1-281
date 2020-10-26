@@ -1,0 +1,13 @@
+<label class="btn btn-default">
+  <input type="file" (change)="selectFile($event)">
+</label>
+
+<button class="btn  btn-success" [disabled]="!selectedFiles" (click)="upload()">Sumbit</button>
+
+
+
+<div *ngIf="currentFileUpload"  >
+  <p>
+    UPLOADED SUCCESSFULLY
+  </p>
+</div>
