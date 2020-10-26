@@ -1,0 +1,1 @@
+./cloudtechapp-service start

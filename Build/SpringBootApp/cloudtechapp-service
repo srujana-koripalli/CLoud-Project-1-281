@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+export PID_FILE_PATH="cloudtechapp-service.pid"
+export LOG_FILE_PATH="cloudtechapp-service.log"
+export LOG_ERROR_FILE_PATH="cloudtechapp-service.error.log"
+
+. ./services.sh
+
+startservice() {
+  rm -r logs/*.*
+  bash startup.sh
+}
+
+before-start() {
+  local action="$1" # Action
+  echo "* Starting with $action..."
+}
+
+after-finish() {
+  local action="$1" # Action
+  echo "* Finished with $action."
+}
+
+action="$1"
+serviceName="CloudTechAppService"
+command="startservice"
+workdir="."
+
+serviceMenu "$action" "$serviceName" "$command" "$workdir" before-start after-finish
